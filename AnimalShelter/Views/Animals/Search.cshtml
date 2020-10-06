@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@using AnimalShelter.Models;
+@model List<AnimalShelter.Models.Animal>;
+
+<h1>Animals</h1>
+
+@* @using (Html.BeginForm())
+    {
+      @Html.LabelFor(model => model.name)
+      @Html.TextBoxFor(model => model.name, new { @type="text", @class = "form-control input", @id="name"})
+      <input type="text" name="name">
+      <input type="submit" value="Search" class="btn btn-info buttons"/>
+    } *@
+
+@if (@Model.Count == 0)
+{
+  <h3>No animals matched!</h3>
+}
+
+@foreach (Animal animal in Model)
+{
+  <li>@Html.ActionLink($"{animal.Name}", "Details", new {id = animal.AnimalId })</li>
+}
+
+<p>@Html.ActionLink("Add Animal", "Create")</p>
+<p>@Html.ActionLink("Homepage", "Index", "Home")</p>

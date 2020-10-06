@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+
+@using AnimalShelter.Models;
+@model List<AnimalShelter.Models.Animal>;
+
+<h1>Animals</h1>
+
+@using (Html.BeginForm())
+{
+  @* @Html.DropDownListFor(m => ),
+    new SelectList(Enum.GetValues(typeof(Animal))),
+    "Select Search parameter",
+     new { @class = "form-control" }) *@
+}
+
+<form method="post">
+  <label for="place">Filter by:</label>
+  <select id="place" name="place">
+    <option value="Breed">Breed</option>
+    <option value="Name">Name</option>
+    <option value="DateAdmitted">Date Admitted</option>
+  </select>
+  <input type="submit" value="Filter" class="btn btn-danger buttons">
+</form>
+
+
+@if (@Model.Count == 0)
+{
+  <h3>No animals are in the list!</h3>
+}
+
+@foreach (Animal animal in Model)
+{
+  <li>@Html.ActionLink($"{animal.Name}", "Details", new {id = animal.AnimalId })</li>
+}
+
+<p>@Html.ActionLink("Add Animal", "Create")</p>
