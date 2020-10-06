@@ -6,7 +6,7 @@
 
 ## Description
 
-_This is an Epicodus Exercise using Databases to create a program for an animal shelter to track the animals in their facility based on animal type (such as cat or dog) 
+_This is an Epicodus Exercise using Databases to create a program for an animal shelter to track the animals in their facility based on animal type (such as cat or dog)._
 
 ## Setup/Installation Requirements
 
@@ -26,6 +26,8 @@ _If there are any questions or concerns, feel free to contact us at daniel.schaa
 ## Technologies Used
 
 _C#_
+_HTML_
+_CSS_
 
 ### License
 

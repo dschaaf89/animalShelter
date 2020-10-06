@@ -9,5 +9,7 @@ namespace AnimalShelter.Models
         public string Breed { get; set; }
         public int AnimalId { get; set; }
 
+        public string Type {get; set;}
+
     }
 }
